@@ -62,7 +62,8 @@ function test_HeaderRow() {
     headerRowNumber = 3,
     startColumnNumber = 2,
     columnTitles = ['col1', 'col2', 'col3'],
-    hr = new HeaderRow(ss, sheetName, headerRowNumber, startColumnNumber, columnTitles, true);
+    overwritePrevious = true,
+    hr = new HeaderRow(ss, sheetName, headerRowNumber, startColumnNumber, columnTitles, overwritePrevious);
   hr.freezeHeaderRow();
   hr.setHeaderFontWeightBold();
   hr.setFontStyle('oblique');
