@@ -21,7 +21,6 @@ function createFolder(folderName) {
     }
     return folder;
 }
-
 // Manage Google Drive files in folders.
 // Add files of file type 'spreadsheet' to folder called 'spreadsheets'
 // Add files of file type 'document' to folder called 'documents'.
@@ -32,12 +31,15 @@ function arrangeDocsToFolders() {
         docFolder = createFolder('documents'),
         allFiles = DocsList.getAllFiles(),
         allFilesCount = allFiles.length,
-        i;
+        i,
+        rootFolder = DocsList.getRootFolder();
     for (i = 0; i < allFilesCount; i += 1) {
         if (allFiles[i].getFileType().toString() === 'spreadsheet') {
             allFiles[i].addToFolder(ssFolder);
+            allFiles[i].removeFromFolder(rootFolder);
         } else if (allFiles[i].getFileType().toString() === 'document') {
             allFiles[i].addToFolder(docFolder);
+            allFiles[i].removeFromFolder(rootFolder);
         }
     }
 }
