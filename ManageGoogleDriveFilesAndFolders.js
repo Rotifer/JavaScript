@@ -43,3 +43,16 @@ function arrangeDocsToFolders() {
         }
     }
 }
+// Loop through all the user's Google Drive files and
+//   return a JavaScript object literal mapping the file names to
+//   the file IDs.
+function getFileNameIdMap() {
+    var files = DocsList.getAllFiles(),
+        fileNameIdMap = {},
+        i,
+        fileCount = files.length;
+    for (i = 0; i< fileCount; i += 1) {
+        fileNameIdMap[files[i].getName()] = files[i].getId();
+    }
+    return fileNameIdMap;
+}
