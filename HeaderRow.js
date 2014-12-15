@@ -36,7 +36,7 @@ HeaderRow.prototype = {
   },
   addCommentToColumn: function (comment, headerRowColumnNumber) {
     var cellToComment = this.headerRowRange.getCell(1, headerRowColumnNumber);
-    cellToComment.setComment(comment);
+    cellToComment.setNote(comment);
   },
   addColumnTitlesToHeaderRow: function () {
     var i,
