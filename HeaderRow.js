@@ -23,7 +23,7 @@ function HeaderRow(spreadsheet, sheetName, headerRowNumber, startColumnNumber, c
 }
 
 HeaderRow.prototype = {
-  constructor: HeaderRow,
+  constructor: 'HeaderRow',
   freezeHeaderRow: function () {
     var sheet = this.sheet;
     sheet.setFrozenRows(this.headerRowNumber);
